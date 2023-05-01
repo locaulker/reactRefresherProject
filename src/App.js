@@ -13,7 +13,8 @@ const App = () => {
 
   // callBack function passed from parent to child component
   const addNewGoalHandler = newGoal => {
-    setCourseGoals(courseGoals.concat(newGoal))
+    // setCourseGoals(courseGoals.concat(newGoal))
+    setCourseGoals(prevCourseGoals => prevCourseGoals.concat(newGoal))
   }
 
   return (
