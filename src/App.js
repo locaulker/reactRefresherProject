@@ -1,20 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
 
 import GoalList from "./components/GoalList/GoalList"
 import NewGoal from "./components/NewGoal/NewGoal"
 import "./App.css"
 
 const App = () => {
-  const courseGoals = [
+  const [courseGoals, setCourseGoals] = useState([
     { id: "cg1", text: "Finish the Course" },
     { id: "cg2", text: "Lear all about the main Topics of the Course" },
     { id: "cg3", text: "Help other students in the Q&A" }
-  ]
+  ])
 
   // callBack function passed from parent to child component
   const addNewGoalHandler = newGoal => {
-    courseGoals.push(newGoal)
-    console.log(courseGoals)
+    setCourseGoals(courseGoals.concat(newGoal))
   }
 
   return (
