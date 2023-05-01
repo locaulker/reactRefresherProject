@@ -11,10 +11,16 @@ const App = () => {
     { id: "cg3", text: "Help other students in the Q&A" }
   ]
 
+  // callBack function passed from parent to child component
+  const addNewGoalHandler = newGoal => {
+    courseGoals.push(newGoal)
+    console.log(courseGoals)
+  }
+
   return (
     <div className="course-goals">
       <h2>Course Goals</h2>
-      <NewGoal />
+      <NewGoal onAddGoal={addNewGoalHandler} />
       <GoalList goals={courseGoals} />
     </div>
   )
